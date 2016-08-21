@@ -52,9 +52,19 @@ public class Ejercio10 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
 
         txtFotos.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
+        txtFotos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFotosKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtFotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 60, -1));
 
         txtValor.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 14)); // NOI18N
+        txtValor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtValorKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, -1));
 
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
@@ -123,6 +133,27 @@ public class Ejercio10 extends javax.swing.JFrame {
        txtFotos.setText("");
        txtFotos.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtFotosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFotosKeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())){ 
+              getToolkit().beep(); 
+               
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtFotosKeyTyped
+
+    private void txtValorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+        
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+    }//GEN-LAST:event_txtValorKeyTyped
 
     /**
      * @param args the command line arguments
