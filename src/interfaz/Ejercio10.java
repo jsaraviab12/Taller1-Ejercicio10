@@ -153,6 +153,7 @@ public class Ejercio10 extends javax.swing.JFrame {
               getToolkit().beep(); 
                
               evt.consume(); 
+              
     }//GEN-LAST:event_txtValorKeyTyped
 
     /**
