@@ -70,6 +70,11 @@ public class Ejercio10 extends javax.swing.JFrame {
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdBorrar.setForeground(new java.awt.Color(153, 0, 0));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Rage Italic", 0, 48)); // NOI18N
@@ -112,6 +117,12 @@ public class Ejercio10 extends javax.swing.JFrame {
        }
        
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtValor.setText("");
+       txtFotos.setText("");
+       txtFotos.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
