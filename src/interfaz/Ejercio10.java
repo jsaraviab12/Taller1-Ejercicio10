@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jesus
@@ -58,6 +60,11 @@ public class Ejercio10 extends javax.swing.JFrame {
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(0, 153, 0));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
 
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
@@ -87,6 +94,24 @@ public class Ejercio10 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+       String res1;
+       int fotos, porce, suma,multi;
+       if (txtFotos.getText().trim().isEmpty() ){
+             JOptionPane.showMessageDialog(this,"Por favor digiete la cantidad de fotos a revelar","Error",JOptionPane.ERROR_MESSAGE);
+            txtFotos.requestFocusInWindow();
+       }else{
+        fotos= Integer.parseInt(txtFotos.getText()); 
+        multi=fotos*1500;
+        porce=(multi*16)/100;
+        suma= multi + porce;
+        res1=String.valueOf(suma);
+     txtValor.setText(res1);
+        
+       }
+       
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
